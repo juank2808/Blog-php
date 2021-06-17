@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Blog</title>
-  </head>
-  <body>
+
     <?php require PATH_HEADER_TPL; ?>
     <div class="container">
       <div class="row">
@@ -36,5 +26,3 @@
       </div>
     </div>
     <?php require PATH_FOOTER_TPL; ?>
-  </body>
-</html>
