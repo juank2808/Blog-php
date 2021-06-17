@@ -36,9 +36,11 @@
       </div>
     </nav>
     <div class="container">
-      <h1>MY BLOG WITH PHP</h1>
       <div class="row">
-        <div class="card col-5">
+        <h1 class="text-center">MY BLOG WITH PHP</h1>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="card col-10">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Article 1</h5>
@@ -47,8 +49,8 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="card  col-5">
+      <div class="row justify-content-md-center">
+        <div class="card col-10">
           <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Article 1</h5>
@@ -58,5 +60,12 @@
         </div>
       </div>
     </div>
+    <footer class="footer mt-auto py-3 bg-dark ">
+      <div class="container">
+        <div class="row">
+          <span class="text-muted">My BLOG with PHP <a href="https://es.linkedin.com/in/juan-camilo-amaya-florez-b95084138"><i class="bi bi-linkedin"></i></></span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
