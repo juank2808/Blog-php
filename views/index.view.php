@@ -9,9 +9,9 @@
     <title>Blog</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark navbar-expand-md">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">Blog</a>
+        <a class="navbar-brand" href="<?php echo PATH_INDEX; ?>">Blog</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,5 +35,28 @@
         </div>
       </div>
     </nav>
+    <div class="container">
+      <h1>MY BLOG WITH PHP</h1>
+      <div class="row">
+        <div class="card col-5">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Article 1</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted"><?php echo date("F j, Y, g:i a");  ?></small></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card  col-5">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Article 1</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted"><?php echo date("F j, Y, g:i a");  ?></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
