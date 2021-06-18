@@ -1,5 +1,5 @@
 <?php
-require 'db/db.php';
+require 'objs/db.php';
 require 'admin/config.php';
 require 'views/index.view.php';
 
