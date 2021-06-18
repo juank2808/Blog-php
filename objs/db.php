@@ -13,6 +13,15 @@ class Connection
     }
     return $conn;
   }
+  public function try_connection(){
+    $conn = new Connection();
+    if (!$conn->connect()) {
+      // header('Locale:error.php');
+      return false;
+    }else {
+      return true;
+    }
+  }
 }
 
 

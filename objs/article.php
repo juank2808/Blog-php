@@ -56,14 +56,12 @@ class Article extends Connection
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
   public function create_article(){
-    $conn = new Connection();
-    if (!$conn->connect()) {
-      // header('Locale:error.php');
-      echo "ERROR";
-    }else {
+    $conn = new Connection ();
+    if($conn->try_connection()==true){
       echo "SUCCESS";
+    }else {
+      echo "NOOOO";
     }
-    
   }
 }
 
