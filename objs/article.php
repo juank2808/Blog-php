@@ -1,8 +1,9 @@
 <?php
-
 /**
  *
  */
+require 'db.php';
+
 class Article extends Connection
 {
   protected $id;
@@ -40,9 +41,7 @@ class Article extends Connection
   public function getA_date(){
     return $this->a_date;
   }
-  public function setA_date($a_date){
-    $this->a_date = $a_date;
-  }
+  /*Set date dont exist cause is auto*/
   public function getA_text(){
     return $this->a_text;
   }
@@ -52,10 +51,20 @@ class Article extends Connection
   public function getA_image(){
     return $this->a_image;
   }
-  public function setA_text($a_image){
+  public function setA_image($a_image){
     $this->a_image = $a_image;
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
+  public function create_article(){
+    $conn = new Connection();
+    if (!$conn->connect()) {
+      // header('Locale:error.php');
+      echo "ERROR";
+    }else {
+      echo "SUCCESS";
+    }
+    
+  }
 }
 
 

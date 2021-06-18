@@ -1,14 +1,12 @@
 <?php
-require 'objs/db.php';
+require 'objs/article.php';
 require 'admin/config.php';
 require 'views/index.view.php';
+//
+// $conn = new Connection();
+//
+$article =new Article('HI','MYARTICLE','','MYARTICLE2','HELLO.png');
 
-$conn = new Connection();
-
-if (!$conn->connect()) {
-  header('Locale:error.php');
-}else {
-  echo "SUCCESS";
-}
+var_dump($article->create_article());
 
 ?>
