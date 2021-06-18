@@ -6,7 +6,7 @@ require 'views/index.view.php';
 $conn = new Connection();
 
 if (!$conn->connect()) {
-  echo "CONNECTION not FOUND";
+  header('Locale:error.php');
 }else {
   echo "SUCCESS";
 }
