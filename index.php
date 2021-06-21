@@ -5,8 +5,8 @@ require 'views/index.view.php';
 //
 // $conn = new Connection();
 //
-$article =new Article('HI','MYARTICLE','','MYARTICLE2','HELLO.png');
-
-print_r($article->get_articles());
+// $article =new Article('HI','MYARTICLE','','MYARTICLE2','HELLO.png');
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1 ;
+print_r($article->get_articles($page));
 
 ?>

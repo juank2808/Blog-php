@@ -56,6 +56,8 @@ class Article extends Connection
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
   public function get_articles($page){
+    $page = '';
+    $sttm = '';
     $init = '';
     $PPP = 5;
     $conn = new Connection ();
@@ -64,9 +66,11 @@ class Article extends Connection
       $sttm = $conn->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT $init, $PPP" );
       $sttm->execute();
       $sttm = $sttm->fetchAll();
+      return $sttm;
     }else {
-      echo "<h1>Articles not foud</h1>";
+      return "<h1>Articles not foud</h1>";
     }
+    return $sttm;
   }
 }
 
