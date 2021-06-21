@@ -55,12 +55,17 @@ class Article extends Connection
     $this->a_image = $a_image;
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
-  public function create_article(){
+  public function get_articles($page){
+    $init = '';
+    $PPP = 5;
     $conn = new Connection ();
     if($conn->try_connection()==true){
-      echo "SUCCESS";
+      $init = ($page > 1) ? ($page * $PPP - $PPP) : 0 ;
+      $sttm = $conn->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT $init, $PPP" );
+      $sttm->execute();
+      $sttm = $sttm->fetchAll();
     }else {
-      echo "NOOOO";
+      echo "<h1>Articles not foud</h1>";
     }
   }
 }

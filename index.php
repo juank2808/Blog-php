@@ -7,6 +7,6 @@ require 'views/index.view.php';
 //
 $article =new Article('HI','MYARTICLE','','MYARTICLE2','HELLO.png');
 
-print_r($article->create_article());
+print_r($article->get_articles());
 
 ?>
