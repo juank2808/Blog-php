@@ -62,6 +62,7 @@ class Article extends Connection
     $PPP = 5;
     $conn = new Connection ();
     if($conn->try_connection()==true){
+      $conn = $conn->connect();
       $init = ($page > 1) ? ($page * $PPP - $PPP) : 0 ;
       $sttm = $conn->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT $init, $PPP" );
       $sttm->execute();
