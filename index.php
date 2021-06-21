@@ -1,12 +1,16 @@
 <?php
 require 'objs/article.php';
 require 'admin/config.php';
-require 'views/index.view.php';
+
 //
 // $conn = new Connection();
 //
-$article =new Article('HI','MYARTICLE','','MYARTICLE2','HELLO.png');
+$articles = new Article('','','','','');
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1 ;
-print_r($article->get_articles($page));
+
+$articles = $articles->get_articles($page);
+
+require 'views/index.view.php';
+/*if we assign variblaes to our views, those views have to be placed below our code*/
 
 ?>
