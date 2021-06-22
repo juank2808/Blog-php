@@ -56,14 +56,13 @@ class Article extends Connection
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
   public function get_articles($page){
-    $page = '';
+
     $sttm = '';
-    $init = '';
     $PPP = 5;
+    $init = ($page > 1) ? ($page * $PPP - $PPP) : 0 ;
     $conn = new Connection ();
     if($conn->try_connection()==true){
       $conn = $conn->connect();
-      $init = ($page > 1) ? ($page * $PPP - $PPP) : 0 ;
       $sttm = $conn->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT $init, $PPP" );
       $sttm->execute();
       $sttm = $sttm->fetchAll();
@@ -72,6 +71,20 @@ class Article extends Connection
       return "<h1>Articles not foud</h1>";
     }
     return $sttm;
+    $conn = null;
+  }
+  public function get_pagination(){
+    $PPP = 5;
+    $conn = new Connection ();
+    $conn = $conn->connect();
+    $totalArticles = $conn->query('SELECT FOUND_ROWS() as total');
+  
+    $totalArticles =  $totalArticles->fetch()['total'];
+
+    $n_Page = ceil($totalArticles / $PPP);
+
+    return $n_Page;
+
   }
 }
 
