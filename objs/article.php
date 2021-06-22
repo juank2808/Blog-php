@@ -73,12 +73,13 @@ class Article extends Connection
     return $sttm;
     $conn = null;
   }
+  /*ERROR HERE*/
   public function get_pagination(){
     $PPP = 5;
     $conn = new Connection ();
     $conn = $conn->connect();
     $totalArticles = $conn->query('SELECT FOUND_ROWS() as total');
-  
+
     $totalArticles =  $totalArticles->fetch()['total'];
 
     $n_Page = ceil($totalArticles / $PPP);
