@@ -3,6 +3,7 @@
  *
  */
 require 'db.php';
+require './admin/functions.php';
 
 class Article extends Connection
 {
@@ -22,8 +23,8 @@ class Article extends Connection
     $this->a_image = $a_image;
   }
   /*only get method to our id*/
-  public function getId(){
-    return $this->id;
+  public function getId($id){
+    return $this->$id;
   }
   /***/
   public function getA_title(){
@@ -55,7 +56,6 @@ class Article extends Connection
     $this->a_image = $a_image;
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
-  /*ERROR HERE*/
   public function get_pagination(){
     $PPP = 5;
     $n_Page = '';
@@ -83,6 +83,16 @@ class Article extends Connection
       return "<h1>Articles not foud</h1>";
     }
     return $sttm;
+  }
+  public function get_article($id){
+
+    $conn = new Connection ();
+    $conn = $conn->connect();
+
+    $sttm = $conn->query("SELECT * FROM articles WHERE id = $id LIMIT 1");
+    $sttm = $sttm->fetch();
+
+    return ($sttm) ? $sttm : false;
   }
 
 }
