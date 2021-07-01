@@ -55,8 +55,20 @@ class Article extends Connection
     $this->a_image = $a_image;
   }
   /*METHODS TO GET ARTICLES CALLING TO DB*/
-  public function get_articles($page){
+  /*ERROR HERE*/
+  public function get_pagination(){
+    $PPP = 5;
+    $n_Page = '';
+    $conn = new Connection ();
+    $conn = $conn->connect();
+    $totalArticles = $conn->query("SELECT FOUND_ROWS() as total");
+    $totalArticles =  $totalArticles->fetch()['total'];
 
+    $n_Page = ceil($totalArticles / $PPP);
+
+    return $n_Page;
+  }
+  public function get_articles($page){
     $sttm = '';
     $PPP = 5;
     $init = ($page > 1) ? ($page * $PPP - $PPP) : 0 ;
@@ -71,22 +83,8 @@ class Article extends Connection
       return "<h1>Articles not foud</h1>";
     }
     return $sttm;
-    $conn = null;
   }
-  /*ERROR HERE*/
-  public function get_pagination(){
-    $PPP = 5;
-    $conn = new Connection ();
-    $conn = $conn->connect();
-    $totalArticles = $conn->query('SELECT FOUND_ROWS() as total');
 
-    $totalArticles =  $totalArticles->fetch()['total'];
-
-    $n_Page = ceil($totalArticles / $PPP);
-
-    return $n_Page;
-
-  }
 }
 
 

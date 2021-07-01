@@ -19,5 +19,5 @@
       <?php endforeach; ?>
       </div>
     </div>
-    <?php require PATH_PAGINATION_TPL ?>
+    <?php require PATH_PAGINATION_TPL; ?>
     <?php require PATH_FOOTER_TPL; ?>

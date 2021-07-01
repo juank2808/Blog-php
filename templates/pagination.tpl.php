@@ -14,6 +14,7 @@
       </li>
     <?php endif; ?>
     <?php
+
     for ($i=1; $i <= $n_Page; $i++) {
       if ($page == $i) {
         echo "  <li class='page-item'><a class='page-link' href='?page=$i'>$i</a></li>";
