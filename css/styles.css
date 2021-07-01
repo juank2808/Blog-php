@@ -6,3 +6,15 @@
 .article-title, .read-more{
   text-decoration: none !important;
 }
+.gray{
+  color: #adb5bd;
+}
+.paper-effe{
+  /* margin-left: 1000px; */
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 7px 7px 10px #525151;
+}
+}
