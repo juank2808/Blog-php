@@ -60,11 +60,17 @@ class Article extends Connection
     $PPP = 5;
     $n_Page = '';
     $conn = new Connection ();
-    $conn = $conn->connect();
-    $totalArticles = $conn->query("SELECT FOUND_ROWS() as total");
-    $totalArticles =  $totalArticles->fetch()['total'];
+    if($conn->try_connection()==true){
+      $conn = $conn->connect();
 
-    $n_Page = ceil($totalArticles / $PPP);
+      $totalArticles = $conn->prepare("SELECT FOUND_ROWS() as TOTAL");
+      $totalArticles->execute();
+
+      $totalArticles =  $totalArticles->fetch()['total'];
+
+      $n_Page = ceil($totalArticles / $PPP);
+      
+    }
 
     return $n_Page;
   }

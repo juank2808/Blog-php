@@ -13,4 +13,5 @@ if (empty($_GET['id'])) {
 $article = $article->get_article($article_id);
 
 
+
 require 'views/article.view.php';
