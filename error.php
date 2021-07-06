@@ -1,4 +1,4 @@
 <?php
-echo "ERROR!";
-
+require 'admin/config.php';
+require 'views/error.view.php';
  ?>
