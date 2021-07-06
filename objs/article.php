@@ -70,9 +70,6 @@ class Article extends Connection
         $totalArticles = 1;
         $n_Page = ceil($totalArticles / $PPP);
       }
-
-
-
     }
 
     return $n_Page;
@@ -102,6 +99,18 @@ class Article extends Connection
     $sttm = $sttm->fetch();
 
     return ($sttm) ? $sttm : false;
+  }
+  public function search_article($article){
+    $conn = new Connection ();
+    $conn = $conn->connect();
+    $sttm = $conn->prepare(
+      'SELECT * FROM articles WHERE a_title LIKE :search OR a_text LIKE :search');
+      $sttm->execute(array(':search'=>"%$article%"));
+    $sttm = $sttm->fetchAll();
+    if (empty($sttm)) {
+      $sttm = 'Data not Found';
+    }
+    return $sttm;
   }
 
 }

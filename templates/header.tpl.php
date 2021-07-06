@@ -24,8 +24,8 @@
             <a class="nav-link" href="#">Index</a>
           </li>
           <li class="nav-item">
-            <form class="d-flex" action="search.php" method="get" name="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="search.php" method="post" name="search">
+              <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">
                 <i class="bi bi-search"></i>
               </button>
