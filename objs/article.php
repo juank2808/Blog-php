@@ -63,13 +63,16 @@ class Article extends Connection
     if($conn->try_connection()==true){
       $conn = $conn->connect();
 
-      $totalArticles = $conn->prepare("SELECT FOUND_ROWS() as TOTAL");
+      $totalArticles = $conn->prepare("SELECT FOUND_ROWS() as total");
       $totalArticles->execute();
-
       $totalArticles =  $totalArticles->fetch()['total'];
+      if ($totalArticles == 0) {
+        $totalArticles = 1;
+        $n_Page = ceil($totalArticles / $PPP);
+      }
 
-      $n_Page = ceil($totalArticles / $PPP);
-      
+
+
     }
 
     return $n_Page;
